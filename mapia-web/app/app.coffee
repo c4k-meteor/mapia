@@ -15,6 +15,10 @@ angular.module 'Mapia', [
     controller: 'HelloCtrl'
     controllerAs: 'hello'
 
+  .state 'coderun',
+    url: '/coderun'
+    templateUrl: 'view/coderun/coderun.html'
+
   .state 'main',
     url: '/main'
     templateUrl: 'view/main/main.html'
