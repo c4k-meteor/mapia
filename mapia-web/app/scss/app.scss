@@ -85,6 +85,9 @@ html {
 /* Mobile Only */
 @media only screen and (max-width : 768px) {
 
+  #home .ui.card {
+    width: 100%;
+  }
   #home .menu .right.menu > .item {
     display: none;
   }
