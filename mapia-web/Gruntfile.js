@@ -37,14 +37,18 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/assets/css/**/*.css'],
         tasks: ['copy:css', 'autoprefixer']
       },
+      sass: {
+        files: ['<%= yeoman.app %>/scss/**/*.scss'],
+        tasks: ['sass']
+      },
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
         },
         files: [
           '<%= yeoman.app %>/**/*.html',
-          '.tmp/assets/css/**/*.css',
-          '{.tmp,<%= yeoman.app %>}/**/*.js',
+          '<%= yeoman.app %>/assets/**/*.css',
+          '<%= yeoman.app %>/**/*.js',
           '<%= yeoman.app %>/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -53,7 +57,7 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'scss',
+          cwd: './app/scss',
           src: ['main.scss'],
           dest: './app/assets/css',
           ext: '.css'

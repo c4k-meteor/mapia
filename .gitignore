@@ -52,8 +52,11 @@ node_modules/
 *.js
 *.js.map
 
-.sass-cache
-.tmp
-dist
-app/bower_components
-assets/css
+
+.DS_Store
+
+mapia-web/.sass-cache
+mapia-web/.tmp
+mapia-web/dist
+mapia-web/app/bower_components
+mapia-web/app/assets/css

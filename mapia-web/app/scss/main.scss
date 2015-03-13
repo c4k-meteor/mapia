@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/NanumGothic-Regular.eot');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/NanumGothic-Bold.eot');
+}
+
+
+$fa-font-path: "../../lib/font-awesome/fonts" !default;
+
+
+
+@import "app/bower_components/font-awesome/scss/font-awesome";
+@import "app/scss/ng-animation";
+@import "app/scss/common";
+@import "app/scss/app";
