@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: 'Nanum Gothic';
   font-style: normal;
@@ -13,11 +15,50 @@
 }
 
 
-$fa-font-path: "../../lib/font-awesome/fonts" !default;
+$font-family: 'Nanum Gothic', NanumGothic, 'Nanum Gothic', 'Lato';
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border-radius-shadow($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+
+  -webkit-box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+  -ms-box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+}
+
+
+body, button, input, select, textarea {
+  font-family: $font-family;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.ui-view {
+  @extend .container;
+  max-width: 600px;
+}
 
 
 
-@import "app/bower_components/font-awesome/scss/font-awesome";
 @import "app/scss/ng-animation";
-@import "app/scss/common";
 @import "app/scss/app";
