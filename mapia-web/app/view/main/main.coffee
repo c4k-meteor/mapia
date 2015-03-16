@@ -1,10 +1,13 @@
 
 angular.module('Mapia')
-.controller 'MainCtrl', () ->
+.controller 'MainCtrl', ($scope) ->
 
-  main = this
+  vm = this
 
   activate = ->
+    $scope.map =
+      center: { latitude: 45, longitude: -73 }
+      zoom: 8
 
 
   activate()

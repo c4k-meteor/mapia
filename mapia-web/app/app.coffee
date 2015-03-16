@@ -1,6 +1,7 @@
 
 angular.module 'Mapia', [
   'ui.router'
+  'uiGmapgoogle-maps'
 ]
 
 .config ($urlRouterProvider, $stateProvider) ->
