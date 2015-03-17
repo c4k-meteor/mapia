@@ -1,17 +1,19 @@
-angular.module('Mapia').controller 'MapMainCtrl', ($scope, $log, $timeout) ->
-  $scope.map =
-    center:
-      latitude: 40.1451
-      longitude: -99.6680
-    zoom: 4
+angular.module('Mapia')
+.controller 'MapMainCtrl', ($scope, $log, $timeout) ->
+
   $scope.map =
     center:
       latitude: 37.550131
       longitude: 126.977877
     zoom: 4
+
+  $scope.mylat = "36.99059819567056"
+  $scope.mylon =  "127.76889262500003"
+
   $scope.options = scrollwheel: true
   $scope.coordsUpdates = 0
   $scope.dynamicMoveCtr = 0
+
   $scope.marker =
     id: 0
     coords:
@@ -19,7 +21,9 @@ angular.module('Mapia').controller 'MapMainCtrl', ($scope, $log, $timeout) ->
       longitude: -99.6680
     options: draggable: true
     events: dragend: (marker, eventName, args) ->
-      $log.log 'marker dragend'
+
+      console.log 'marker dragend'
+
       lat = marker.getPosition().lat()
       lon = marker.getPosition().lng()
       $log.log lat
@@ -31,16 +35,34 @@ angular.module('Mapia').controller 'MapMainCtrl', ($scope, $log, $timeout) ->
         labelClass: 'marker-labels'
 
 
+
       $scope.mylat =
         $scope.marker.coords.latitude
+
       $scope.mylon =
         $scope.marker.coords.longitude
+
       $scope.myname =
         'Paul'
 
-
+      getReverseGeocode($scope.mylat, $scope.mylon)
 
       return
+
+
+  getReverseGeocode = (lat, lng) ->
+    geocoder = new google.maps.Geocoder();
+    latlng = new google.maps.LatLng(lat, lng);
+
+    geocoder.geocode { 'latLng': latlng }, (results, status) ->
+
+      if (status == google.maps.GeocoderStatus.OK)
+        if (results[1])
+          $log.log results[1]
+
+
+
+
   $scope.$watchCollection 'marker.coords', (newVal, oldVal) ->
     if _.isEqual(newVal, oldVal)
       return

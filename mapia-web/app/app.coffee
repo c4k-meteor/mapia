@@ -2,7 +2,6 @@
 angular.module 'Mapia', [
   'ui.router'
   'uiGmapgoogle-maps'
-  'angularReverseGeocode'
 ]
 
 .config ($urlRouterProvider, $stateProvider) ->
