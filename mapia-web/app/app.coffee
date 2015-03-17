@@ -1,11 +1,12 @@
 
 angular.module 'Mapia', [
   'ui.router'
+  'uiGmapgoogle-maps'
 ]
 
 .config ($urlRouterProvider, $stateProvider) ->
 
-  $urlRouterProvider.otherwise '/main'
+  $urlRouterProvider.otherwise '/map'
 
   $stateProvider
 
@@ -18,6 +19,12 @@ angular.module 'Mapia', [
     templateUrl: 'view/main/main.html'
     controller: 'MainCtrl'
     controllerAs: 'main'
+
+  .state 'map',
+    url: '/map'
+    templateUrl: 'view/map/main/main.html'
+    controller:'MapMainCtrl'
+
 
 
   return

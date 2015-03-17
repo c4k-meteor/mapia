@@ -1,12 +1,9 @@
 
 angular.module('Mapia')
-.controller 'MainCtrl', () ->
+.controller 'MainCtrl', ($scope) ->
 
-  main = this
+  vm = this
 
-  activate = ->
-
-
-  activate()
+  this.name = "Main Bruce"
 
   return
