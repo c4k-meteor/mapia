@@ -1,6 +1,7 @@
 angular.module('Mapia')
 .controller 'MapMainCtrl', ($scope, $log, $timeout) ->
 
+
   $scope.map =
     center:
       latitude: 37.550131
