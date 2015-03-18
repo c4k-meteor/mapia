@@ -4,12 +4,16 @@ angular.module('Mapia')
 
   $scope.map =
     center:
-      latitude: 37.550131
-      longitude: 126.977877
-    zoom: 4
+      latitude: 37.491407  ##starting point
+      longitude: 126.92421
+    zoom: 17
 
-  $scope.mylat = "36.99059819567056"
-  $scope.mylon =  "127.76889262500003"
+  $scope.mylat = "37.491407706514956"
+  $scope.mylon =  "126.92421136203006"
+
+  # 37.549348440202756 //후암로
+  # 126.97847781481937
+
 
   $scope.options = scrollwheel: true
   $scope.coordsUpdates = 0
@@ -58,8 +62,12 @@ angular.module('Mapia')
     geocoder.geocode { 'latLng': latlng }, (results, status) ->
 
       if (status == google.maps.GeocoderStatus.OK)
-        if (results[1])
-          $log.log results[1]
+        if (results[0])
+          $log.log results[0].formatted_address
+          $scope.mycoordi = results[0].formatted_address
+
+          # address_components
+          # formatted_address
 
 
 
@@ -76,8 +84,8 @@ angular.module('Mapia')
     $scope.dynamicMoveCtr++
     $timeout (->
       $scope.marker.coords =
-        latitude: 37.550131
-        longitude: 126.977877
+        latitude: 37.491407  ##marker
+        longitude: 126.92421
       $scope.dynamicMoveCtr++
       return
     ), 2000

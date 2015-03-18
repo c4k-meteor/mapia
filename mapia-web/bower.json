@@ -11,7 +11,7 @@
     "angular-ui-router": "~0.2.13",
     "semantic-ui": "~1.11.4",
     "jquery": "~2.1.3",
-    "angular-google-maps": "~2.0.16",
+    "angular-google-maps": "~2.0.17",
     "angular-reverse-geocode": "*"
   },
   "devDependencies": {
