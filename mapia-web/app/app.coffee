@@ -2,6 +2,7 @@
 angular.module 'Mapia', [
   'ui.router'
   'uiGmapgoogle-maps'
+  'CuzMainCtrl'
 ]
 
 .config ($urlRouterProvider, $stateProvider) ->
@@ -24,6 +25,11 @@ angular.module 'Mapia', [
     url: '/map'
     templateUrl: 'view/map/main/main.html'
     controller:'MapMainCtrl'
+
+  .state 'cuzco',
+    url: '/cuzco'
+    templateUrl: 'view/cuzco/main/main.html'
+    controller:'CuzMainCtrl'
 
 
 
